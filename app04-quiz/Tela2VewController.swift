@@ -9,11 +9,37 @@ import UIKit
 
 class Tela2VewController: UIViewController {
 
+    @IBOutlet weak var timeView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //timer()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func btnClick2(_ sender: UIButton) {
+        UIView.animate(
+            withDuration: 10.0,
+            delay: 0.0,
+            options: .curveLinear,
+            animations: {
+                self.timeView.frame.size.width -= -393
+            }, completion: { _ in
+                print("terminou")
+            })
+    }
+
+    /*private func timer() {
+        UIView.animate(
+            withDuration: 10.0,
+            delay: 0.0,
+            options: .curveLinear,
+            animations: {
+                self.timeView.frame.size.height = 0
+            }, completion: { _ in
+                print("terminou")
+            })
+    }*/
     
 
     /*
