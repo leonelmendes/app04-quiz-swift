@@ -78,8 +78,8 @@
                                     <constraint firstAttribute="height" constant="60" id="vkl-24-p9w"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pergunta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b22-dU-NRo">
-                                <rect key="frame" x="16" y="310" width="370" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pergunta" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b22-dU-NRo">
+                                <rect key="frame" x="16" y="310" width="370" height="216"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="634" width="402" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM1-yn-tKu">
-                                        <rect key="frame" x="0.0" y="0.0" width="402" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="402" height="50.666666666666664"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
                                             <attributedString key="attributedTitle">
@@ -102,9 +102,12 @@
                                             <color key="baseForegroundColor" red="0.91372549530000002" green="0.36078432199999999" blue="0.1764705926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="opcaoCorretaBtn:" destination="3g4-df-ra8" eventType="touchUpInside" id="OCC-Dt-0gr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AI-Kz-Oyz">
-                                        <rect key="frame" x="0.0" y="53" width="402" height="51"/>
+                                        <rect key="frame" x="0.0" y="52.666666666666629" width="402" height="50.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
                                             <attributedString key="attributedTitle">
@@ -118,25 +121,12 @@
                                             <color key="baseForegroundColor" red="0.91372549530000002" green="0.36078432199999999" blue="0.1764705926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="opcaoCorretaBtn:" destination="3g4-df-ra8" eventType="touchUpInside" id="3Gi-wr-RFW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQB-rO-ckt">
-                                        <rect key="frame" x="0.0" y="106" width="402" height="49"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Resposta 1">
-                                                    <attributes>
-                                                        <font key="NSFont" size="20" name=".SFNS-Regular"/>
-                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="baseForegroundColor" red="0.91372549530000002" green="0.36078432199999999" blue="0.1764705926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WA0-TB-jfI">
-                                        <rect key="frame" x="0.0" y="157" width="402" height="53"/>
+                                        <rect key="frame" x="0.0" y="105.00000000000001" width="402" height="50.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
                                             <attributedString key="attributedTitle">
@@ -150,6 +140,28 @@
                                             <color key="baseForegroundColor" red="0.91372549530000002" green="0.36078432199999999" blue="0.1764705926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="opcaoCorretaBtn:" destination="3g4-df-ra8" eventType="touchUpInside" id="o38-mp-izc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WA0-TB-jfI">
+                                        <rect key="frame" x="0.0" y="157.66666666666663" width="402" height="52.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Resposta 1">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="20"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.91372549530000002" green="0.36078432199999999" blue="0.1764705926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="opcaoCorretaBtn:" destination="3g4-df-ra8" eventType="touchUpInside" id="mys-dW-q4S"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -174,7 +186,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Err-la-1Ej"/>
                     <connections>
+                        <outlet property="lblPergunta" destination="b22-dU-NRo" id="vjO-6e-gvG"/>
                         <outlet property="timeView" destination="pdS-My-Azs" id="D18-ZC-joD"/>
+                        <outletCollection property="respostasBtn" destination="WM1-yn-tKu" collectionClass="NSMutableArray" id="dBP-G2-XPa"/>
+                        <outletCollection property="respostasBtn" destination="3AI-Kz-Oyz" collectionClass="NSMutableArray" id="Mj4-8w-3wb"/>
+                        <outletCollection property="respostasBtn" destination="CQB-rO-ckt" collectionClass="NSMutableArray" id="7kj-mX-Wt2"/>
+                        <outletCollection property="respostasBtn" destination="WA0-TB-jfI" collectionClass="NSMutableArray" id="b9z-Su-kg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aG-FO-GgH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
