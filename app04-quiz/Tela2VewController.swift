@@ -14,6 +14,9 @@ class Tela2VewController: UIViewController {
     @IBOutlet var respostasBtn: [UIButton]!
     
     private var atualIndex: Int = 0
+    private var perguntasRespondidadas = 0
+    private var perguntasCorretas = 0
+    private var perguntasErradas = 0
     
     // MARK: Quizes: perguntas e as respostas
     private let quizes: [(question: String, correctAnswer: String, options: [String])] = [
@@ -74,15 +77,32 @@ class Tela2VewController: UIViewController {
         }
     }
     
+    @IBAction func opcaoSelecionadabtn(_ sender: UIButton) {
+        perguntasRespondidadas += 1
+        guard let indexSelecionado = respostasBtn.firstIndex(of: sender) else { return }
+        
+        let respostaSelecionada = quizes[atualIndex].options[indexSelecionado]
+        let respostaCorreta = quizes[atualIndex].correctAnswer
+        
+        if respostaCorreta == respostaSelecionada {
+            perguntasCorretas += 1
+            print("pergunta correta: \(perguntasCorretas)\n total de perguntas respondidas: \(perguntasRespondidadas)")
+        }
+        else {
+            perguntasErradas += 1
+            print("pergunta errada: \(perguntasErradas)\n total de perguntas respondidas: \(perguntasRespondidadas)")
+        }
+        proximaPergunta()
+    }
     
-    @IBAction func opcaoCorretaBtn(_ sender: UIButton) {
+    private func proximaPergunta() {
         atualIndex += 1
+        
         if atualIndex < quizes.count {
             showPerguntasRespostas()
         } else {
             print("terminou")
         }
-        
     }
     
     /*@IBAction func btnClick2(_ sender: UIButton) {
