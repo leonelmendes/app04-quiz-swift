@@ -14,7 +14,7 @@ class Tela2VewController: UIViewController {
     @IBOutlet var respostasBtn: [UIButton]!
     
     private var atualIndex: Int = 0
-    private var perguntasRespondidadas = 0
+    private var perguntasRespondidas = 0
     private var perguntasCorretas = 0
     private var perguntasErradas = 0
     
@@ -60,7 +60,7 @@ class Tela2VewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showPerguntasRespostas()
-        //timer()
+        timer()
         // Do any additional setup after loading the view.
     }
     
@@ -78,7 +78,7 @@ class Tela2VewController: UIViewController {
     }
     
     @IBAction func opcaoSelecionadabtn(_ sender: UIButton) {
-        perguntasRespondidadas += 1
+        perguntasRespondidas += 1
         guard let indexSelecionado = respostasBtn.firstIndex(of: sender) else { return }
         
         let respostaSelecionada = quizes[atualIndex].options[indexSelecionado]
@@ -86,11 +86,11 @@ class Tela2VewController: UIViewController {
         
         if respostaCorreta == respostaSelecionada {
             perguntasCorretas += 1
-            print("pergunta correta: \(perguntasCorretas)\n total de perguntas respondidas: \(perguntasRespondidadas)")
+            print("pergunta correta: \(perguntasCorretas)\n total de perguntas respondidas: \(perguntasRespondidas)")
         }
         else {
             perguntasErradas += 1
-            print("pergunta errada: \(perguntasErradas)\n total de perguntas respondidas: \(perguntasRespondidadas)")
+            print("pergunta errada: \(perguntasErradas)\n total de perguntas respondidas: \(perguntasRespondidas)")
         }
         proximaPergunta()
     }
@@ -102,22 +102,11 @@ class Tela2VewController: UIViewController {
             showPerguntasRespostas()
         } else {
             print("terminou")
+            nextSegue()
         }
     }
-    
-    /*@IBAction func btnClick2(_ sender: UIButton) {
-        UIView.animate(
-            withDuration: 10.0,
-            delay: 0.0,
-            options: .curveLinear,
-            animations: {
-                self.timeView.frame.size.width -= -393
-            }, completion: { _ in
-                print("terminou")
-            })
-    }*/
 
-    /*private func timer() {
+    private func timer() {
         UIView.animate(
             withDuration: 10.0,
             delay: 0.0,
@@ -126,9 +115,22 @@ class Tela2VewController: UIViewController {
                 self.timeView.frame.size.height = 0
             }, completion: { _ in
                 print("terminou")
+                self.nextSegue()
             })
-    }*/
+    }
     
+    private func nextSegue() {
+        performSegue(withIdentifier: "resultadoSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultadoSegue" {
+            var telaResultado = segue.destination as! Tela3ViewController
+            telaResultado.perguntasCorretas = String(perguntasCorretas)
+            telaResultado.perguntasErradas = String(perguntasErradas)
+            telaResultado.perguntasRespondidas = String(perguntasRespondidas)
+        }
+    }
 
     /*
     // MARK: - Navigation

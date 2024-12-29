@@ -192,6 +192,7 @@
                         <outletCollection property="respostasBtn" destination="3AI-Kz-Oyz" collectionClass="NSMutableArray" id="Mj4-8w-3wb"/>
                         <outletCollection property="respostasBtn" destination="CQB-rO-ckt" collectionClass="NSMutableArray" id="7kj-mX-Wt2"/>
                         <outletCollection property="respostasBtn" destination="WA0-TB-jfI" collectionClass="NSMutableArray" id="b9z-Su-kg6"/>
+                        <segue destination="dtC-kP-A4p" kind="show" identifier="resultadoSegue" id="gAJ-bP-ioe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aG-FO-GgH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -203,17 +204,17 @@
             <objects>
                 <viewController id="dtC-kP-A4p" customClass="Tela3ViewController" customModule="app04_quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N92-IB-lSf">
-                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFe-yj-XQa">
-                                <rect key="frame" x="0.0" y="139" width="402" height="48"/>
+                                <rect key="frame" x="0.0" y="77" width="402" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PpL-O3-Lpv">
-                                <rect key="frame" x="36" y="287" width="311.33333333333331" height="127"/>
+                                <rect key="frame" x="36" y="225" width="311.33333333333331" height="127"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perguntas respondidas: 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlC-Yh-BfX">
                                         <rect key="frame" x="0.0" y="0.0" width="311.33333333333331" height="32.333333333333336"/>
@@ -236,13 +237,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-PP-SaR">
-                                <rect key="frame" x="0.0" y="454" width="402" height="95.666666666666629"/>
+                                <rect key="frame" x="0.0" y="392" width="402" height="95.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-Pw-vMy">
-                                <rect key="frame" x="16" y="776" width="370" height="49"/>
+                                <rect key="frame" x="16" y="800" width="370" height="49"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Recomeçar">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="29"/>
@@ -266,10 +267,16 @@
                             <constraint firstItem="cAb-PP-SaR" firstAttribute="leading" secondItem="ofp-ne-W1N" secondAttribute="leading" id="vcq-OJ-jKE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3db-7n-EaA"/>
+                    <connections>
+                        <outlet property="lblCorretas" destination="92V-QQ-tup" id="5b4-1L-oaH"/>
+                        <outlet property="lblErradas" destination="zyr-0J-uRn" id="Lpq-Ab-b3w"/>
+                        <outlet property="lblRespondidas" destination="GlC-Yh-BfX" id="SMh-Xd-xzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuP-HW-Sag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516.4179104477612" y="2.7459954233409607"/>
+            <point key="canvasLocation" x="1775" y="23"/>
         </scene>
     </scenes>
     <resources>

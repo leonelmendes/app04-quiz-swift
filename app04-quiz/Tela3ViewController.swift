@@ -8,11 +8,23 @@
 import UIKit
 
 class Tela3ViewController: UIViewController {
-
+    var perguntasRespondidas: String?
+    var perguntasCorretas: String?
+    var perguntasErradas: String?
+    
+    @IBOutlet weak var lblErradas: UILabel!
+    @IBOutlet weak var lblCorretas: UILabel!
+    @IBOutlet weak var lblRespondidas: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        lblRespondidas.text = perguntasRespondidas
+        lblCorretas.text = perguntasCorretas
+        lblErradas.text = perguntasErradas
     }
     
 
