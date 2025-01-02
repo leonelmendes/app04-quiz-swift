@@ -8,10 +8,12 @@
 import UIKit
 
 class Tela3ViewController: UIViewController {
+    var valorFinal: String?
     var perguntasRespondidas: String?
     var perguntasCorretas: String?
     var perguntasErradas: String?
     
+    @IBOutlet weak var lblValorFinal: UILabel!
     @IBOutlet weak var lblErradas: UILabel!
     @IBOutlet weak var lblCorretas: UILabel!
     @IBOutlet weak var lblRespondidas: UILabel!
@@ -28,6 +30,9 @@ class Tela3ViewController: UIViewController {
     }
     
 
+    @IBAction func backFirstPage(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToFirst", sender: self)
+    }
     /*
     // MARK: - Navigation
 

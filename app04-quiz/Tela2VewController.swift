@@ -59,9 +59,12 @@ class Tela2VewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showPerguntasRespostas()
-        timer()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        timer()
+        showPerguntasRespostas()
     }
     
     /*func showPergunaseRespostas(question: ) {
@@ -92,6 +95,7 @@ class Tela2VewController: UIViewController {
             perguntasErradas += 1
             print("pergunta errada: \(perguntasErradas)\n total de perguntas respondidas: \(perguntasRespondidas)")
         }
+        // calcular o valor total
         proximaPergunta()
     }
     
@@ -105,16 +109,18 @@ class Tela2VewController: UIViewController {
             nextSegue()
         }
     }
+    
 
     private func timer() {
         UIView.animate(
-            withDuration: 10.0,
+            withDuration: 5.0,
             delay: 0.0,
             options: .curveLinear,
             animations: {
                 self.timeView.frame.size.height = 0
             }, completion: { _ in
                 print("terminou")
+                //calcular a percentagem
                 self.nextSegue()
             })
     }
@@ -126,9 +132,9 @@ class Tela2VewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultadoSegue" {
             var telaResultado = segue.destination as! Tela3ViewController
-            telaResultado.perguntasCorretas = String(perguntasCorretas)
-            telaResultado.perguntasErradas = String(perguntasErradas)
-            telaResultado.perguntasRespondidas = String(perguntasRespondidas)
+            telaResultado.perguntasCorretas = "Perguntas corretas: \(perguntasCorretas)"
+            telaResultado.perguntasErradas = "Perguntas erradas: \(perguntasErradas)"
+            telaResultado.perguntasRespondidas = "Perguntas respondidas: \(perguntasRespondidas)"
         }
     }
 
