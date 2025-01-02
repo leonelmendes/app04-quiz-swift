@@ -24,6 +24,7 @@ class Tela3ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        lblValorFinal.text = valorFinal
         lblRespondidas.text = perguntasRespondidas
         lblCorretas.text = perguntasCorretas
         lblErradas.text = perguntasErradas

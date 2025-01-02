@@ -17,6 +17,7 @@ class Tela2VewController: UIViewController {
     private var perguntasRespondidas = 0
     private var perguntasCorretas = 0
     private var perguntasErradas = 0
+    private var valorFinal: Double = 0
     
     // MARK: Quizes: perguntas e as respostas
     private let quizes: [(question: String, correctAnswer: String, options: [String])] = [
@@ -96,6 +97,8 @@ class Tela2VewController: UIViewController {
             print("pergunta errada: \(perguntasErradas)\n total de perguntas respondidas: \(perguntasRespondidas)")
         }
         // calcular o valor total
+        var calculoValorFinal = Double(perguntasCorretas) / Double(perguntasRespondidas) * 100
+        valorFinal = calculoValorFinal
         proximaPergunta()
     }
     
@@ -132,6 +135,7 @@ class Tela2VewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultadoSegue" {
             var telaResultado = segue.destination as! Tela3ViewController
+            telaResultado.valorFinal = "\(valorFinal)%"
             telaResultado.perguntasCorretas = "Perguntas corretas: \(perguntasCorretas)"
             telaResultado.perguntasErradas = "Perguntas erradas: \(perguntasErradas)"
             telaResultado.perguntasRespondidas = "Perguntas respondidas: \(perguntasRespondidas)"
